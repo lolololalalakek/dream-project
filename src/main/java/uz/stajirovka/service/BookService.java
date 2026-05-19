@@ -23,9 +23,11 @@ public class BookService {
 
         System.out.println("Not in cache, reading from database: " + title);
         BookEntity fromDb = database.findByTitle(title);
-        if (fromDb != null) {
-            cache.put(title, fromDb);
+        if (fromDb == null) {
+            System.out.println("No book found in database for title: " + title);
         }
+
+        cache.put(title, fromDb);
         return fromDb;
     }
 }

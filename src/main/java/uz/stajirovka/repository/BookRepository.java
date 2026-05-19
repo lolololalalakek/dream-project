@@ -1,6 +1,5 @@
 package uz.stajirovka.repository;
 
-import uz.stajirovka.exception.SorryException;
 import uz.stajirovka.entity.BookEntity;
 
 import java.util.HashMap;
@@ -17,7 +16,8 @@ public class BookRepository {
 
     public BookEntity findByTitle(String title) {
         if (title == null) {
-            throw new SorryException();
+            System.out.println("Title is null");
+            throw new IllegalArgumentException("Title is null");
         }
         return storage.get(title.toLowerCase());
     }

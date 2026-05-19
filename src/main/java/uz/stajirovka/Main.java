@@ -17,7 +17,7 @@ public class Main {
         BookEntity secondCall = service.findByTitle("Khtulkus call");
         System.out.println("Second call result: " + secondCall);
 
-        BookEntity missing = service.findByTitle("Khtulkus call");
-        System.out.println("Missing book result: " + missing);
+        BookEntity missing = service.findByTitle("sad call");
+        System.out.println("Missing result: " + missing);
     }
 }
