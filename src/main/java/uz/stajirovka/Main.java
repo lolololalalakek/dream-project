@@ -11,12 +11,19 @@ public class Main {
 
         BookService service = new BookService(new BookCache(), new BookRepository());
 
+        System.out.println();
+        System.out.println();
         BookEntity firstCall = service.findByTitle("Khtulkus call");
         System.out.println("First call result: " + firstCall);
 
-        BookEntity secondCall = service.findByTitle("Khtulkus call");
+        System.out.println();
+        System.out.println();
+
+        BookEntity secondCall = service.findByTitle("KHTULkus call");
         System.out.println("Second call result: " + secondCall);
 
+        System.out.println();
+        System.out.println();
         BookEntity missing = service.findByTitle("sad call");
         System.out.println("Missing result: " + missing);
     }
